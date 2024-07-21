@@ -7,8 +7,9 @@ export default function RootLayout() {
     'Outfit-Bold': require('./../assets/fonts/Outfit-Bold.ttf'),
   });
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{headerShown:false}}/>
+    <Stack screenOptions={{headerShown:false}}>
+      {/* <Stack.Screen name="index" options={{headerShown:false}}/> */}
+      <Stack.Screen name="(tabs)"/>
     </Stack>
   );
 }

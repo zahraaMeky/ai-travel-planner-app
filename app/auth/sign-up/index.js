@@ -3,7 +3,7 @@ import { useNavigation,useRouter } from 'expo-router';
 import { useEffect,useState } from 'react';
 import { Colors } from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./../../../config/FirebaseConfig";
 
 const SignUP = () => {
@@ -11,7 +11,7 @@ const SignUP = () => {
   const router = useRouter();
 
   const [email, setEmail] = useState("");
-  const [password, setpassword] = useState("");
+  const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
 
 
@@ -23,12 +23,14 @@ const SignUP = () => {
 
   const onCreateAccount =()=>{
     if(!email&&!password&&!fullName){
-      ToastAndroid.show('Please Enter all details',ToastAndroid.BOTTOM)
+      ToastAndroid.show('Please Enter all details',ToastAndroid.LONG)
+      return;
     }
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed up 
       const user = userCredential.user;
+      router.replace('/MyTrip')
       console.log('user',user)
     })
     .catch((error) => {
@@ -50,7 +52,7 @@ const SignUP = () => {
       <View style={{marginTop:20}}>
         <Text style={{fontFamily: 'Outfit'}}>Full Name</Text>
         <TextInput style={styles.input} placeholder="Enter Full Name"
-          onChangeText={(value)=>console.log(value)}
+          onChangeText={(value)=>setFullName(value)}
         ></TextInput>
       </View>
 
@@ -65,7 +67,7 @@ const SignUP = () => {
       <View style={{marginTop:20}}>
         <Text style={{fontFamily: 'Outfit'}}>Password</Text>
         <TextInput style={styles.input} secureTextEntry={true} placeholder="Enter Password"
-          onChangeText={(value)=>setpassword(value)}
+          onChangeText={(value)=>setPassword(value)}
         ></TextInput>
       </View>
 

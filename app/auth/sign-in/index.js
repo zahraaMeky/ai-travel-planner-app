@@ -1,12 +1,17 @@
-import { StyleSheet, Text, TextInput, View,TouchableOpacity} from 'react-native';
-import { useEffect } from 'react';
+import { StyleSheet, Text, TextInput, View,TouchableOpacity,ToastAndroid} from 'react-native';
+import { useEffect,useState } from 'react';
 import { useNavigation,useRouter } from 'expo-router';
 import { Colors } from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
+import {signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./../../../config/FirebaseConfig";
 
 const SignIn = () => {
   const navigation = useNavigation();
   const router = useRouter();
+
+  const [email, setEmail] = useState("");
+  const [password,setPassword] = useState("");
 
   useEffect(() => {
     navigation.setOptions({
@@ -14,6 +19,30 @@ const SignIn = () => {
     });
   }, []);
   
+  const onSignIn=()=>{
+    if(!email&&!password){
+      ToastAndroid.show('Please Enter Email & Password',ToastAndroid.LONG)
+      return;
+    }
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      router.replace('/MyTrip')
+      console.log('user',user)
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log('errorMessage',errorMessage)
+      if (errorCode === 'auth/invalid-email') {
+        ToastAndroid.show('Invalid Email',ToastAndroid.LONG)
+      }
+      if (errorCode === 'auth/invalid-credential') {
+        ToastAndroid.show('Invalid Credential',ToastAndroid.LONG)
+      }
+    });
+  }
   return (
     <View style={styles.mainView}>
 
@@ -27,17 +56,21 @@ const SignIn = () => {
 
       <View style={{marginTop:20}}>
         <Text style={{fontFamily: 'Outfit'}}>Email</Text>
-        <TextInput style={styles.input} placeholder="Enter Email"></TextInput>
+        <TextInput style={styles.input} placeholder="Enter Email"
+           onChangeText={(value)=>setEmail(value)}
+        ></TextInput>
       </View>
 
       <View style={{marginTop:20}}>
         <Text style={{fontFamily: 'Outfit'}}>Password</Text>
-        <TextInput style={styles.input} secureTextEntry={true} placeholder="Enter Password"></TextInput>
+        <TextInput style={styles.input} secureTextEntry={true} placeholder="Enter Password"
+           onChangeText={(value)=>setPassword(value)}
+        ></TextInput>
       </View>
 
-      <View style={styles.button}>
+      <TouchableOpacity style={styles.button}  onPress={onSignIn}>
         <Text style={{textAlign:'center',color:Colors.white}}>Sign In</Text>
-      </View>
+      </TouchableOpacity>
 
       <TouchableOpacity style={[styles.button,styles.buttonInverter]}
        onPress={()=>router.replace('auth/sign-up')}
