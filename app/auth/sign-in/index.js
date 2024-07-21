@@ -2,6 +2,7 @@ import { StyleSheet, Text, TextInput, View,TouchableOpacity} from 'react-native'
 import { useEffect } from 'react';
 import { useNavigation,useRouter } from 'expo-router';
 import { Colors } from '@/constants/Colors';
+import { Ionicons } from '@expo/vector-icons';
 
 const SignIn = () => {
   const navigation = useNavigation();
@@ -15,6 +16,11 @@ const SignIn = () => {
   
   return (
     <View style={styles.mainView}>
+
+      <TouchableOpacity onPress={()=>router.back()}>
+        <Ionicons name="arrow-back" size={24} color="black" />
+      </TouchableOpacity>
+
       <Text style={styles.paragraph}>Let's get you signed in</Text>
       <Text style={[styles.paragraph,styles.paragraphFirst]}>Welcome Back</Text>
       <Text style={[styles.paragraph,styles.paragraphFirst]}>You've been missed !</Text>
@@ -49,13 +55,13 @@ const styles = StyleSheet.create({
   mainView: {
     backgroundColor:Colors.white,
     height:'100%',
-    paddingTop: 80,
+    paddingTop: 40,
     padding:25
   },
   paragraph: {
     fontFamily: 'Outfit',
     fontSize: 30,
-    marginTop: 10,
+    marginTop: 30,
   },
   paragraphFirst: {
     color: Colors.gray, 
