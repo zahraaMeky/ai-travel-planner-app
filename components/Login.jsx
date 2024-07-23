@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image, Text, StyleSheet,TouchableOpacity } from 'react-native';
 import { Colors } from '@/constants/Colors';
-import {useRouter } from 'expo-router';
+import {useRouter} from 'expo-router';
 
 
 const Login = () => {
