@@ -34,7 +34,7 @@ const SelectBudget = () => {
         ToastAndroid.show('Select Your Budget',ToastAndroid.LONG)
         return
     }
-    router.push('')
+    router.push('/create-trip/Review-Trip')
  }
   return (
     <View style={styles.container}>

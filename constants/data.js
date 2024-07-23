@@ -36,18 +36,19 @@ export const selectTravelersList = [
       id: 1,
       title: "Cheap",
       desc: "Stay conscious of cost",
-      icon: <FaMoneyBillWave />, 
+      emoji: "💸", 
     },
     {
       id: 2,
       title: "Moderate",
       desc: "Keep cost at an average level",
-      icon: <FaBalanceScale />, 
+      emoji: "⚖️", 
     },
     {
       id: 3,
       title: "Luxury",
       desc: "Don't worry about the cost",
-      icon: <FaGem />, 
+      emoji: "💎", 
     },
   ];
+  
