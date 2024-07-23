@@ -10,7 +10,7 @@ const MyTrip = () => {
     <View style={styles.mainView}>
 
       <View style={styles.flexRowView}>
-        <Text style={styles.title}>MyTrip</Text>
+        <Text style={styles.title}>My Trip</Text>
         <Ionicons name="add-circle-outline" size={50} color="black" />
       </View>
 

@@ -1,3 +1,5 @@
+import { FaMoneyBillWave, FaBalanceScale, FaGem } from 'react-icons/fa'; 
+
 export const selectTravelersList = [
     {
       id: 1,
@@ -29,3 +31,23 @@ export const selectTravelersList = [
     }
   ];
   
+  export const selectBudgetOption = [
+    {
+      id: 1,
+      title: "Cheap",
+      desc: "Stay conscious of cost",
+      icon: <FaMoneyBillWave />, 
+    },
+    {
+      id: 2,
+      title: "Moderate",
+      desc: "Keep cost at an average level",
+      icon: <FaBalanceScale />, 
+    },
+    {
+      id: 3,
+      title: "Luxury",
+      desc: "Don't worry about the cost",
+      icon: <FaGem />, 
+    },
+  ];

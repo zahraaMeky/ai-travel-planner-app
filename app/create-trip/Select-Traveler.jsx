@@ -41,7 +41,7 @@ const SelectTraveler = () => {
             <TouchableOpacity style={{marginVertical:10}}
             onPress={()=>{setSelectedTravels(item)}}
             >
-              <OptionTravelCard option={item} selectedTravels={selectedTravels}/>
+              <OptionTravelCard option={item} selectedOption={selectedTravels}/>
             </TouchableOpacity>
           )}
           keyExtractor={item => item.id.toString()}
