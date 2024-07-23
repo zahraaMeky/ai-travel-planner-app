@@ -47,14 +47,12 @@ const SelectTraveler = () => {
           keyExtractor={item => item.id.toString()}
         />
       </View>
-      
-        <TouchableOpacity style={styles.button}>
-          <Link href="/create-trip/Select-Dates" style={{textAlign:'center'}}>
-              <Text style={{color:Colors.white,textAlign:'center',fontFamily: 'Outfit-Medium',fontSize:20}}>Contiue</Text>
-          </Link>
-        </TouchableOpacity>
-      
-
+  
+      <TouchableOpacity style={styles.button}>
+        <Link href="/create-trip/Select-Dates" style={{textAlign:'center'}}>
+            <Text style={{color:Colors.white,textAlign:'center',fontFamily: 'Outfit-Medium',fontSize:20}}>Contiue</Text>
+        </Link>
+      </TouchableOpacity>
     </View>
   );
 };
