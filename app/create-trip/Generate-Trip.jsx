@@ -1,40 +1,59 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { useEffect, useContext, useState } from 'react';
+import { useNavigation, useRouter } from 'expo-router';
 import { CreateTripContext } from '../../context/CreateTripContext';
 import { Colors } from './../../constants/Colors';
-import { useEffect, useContext} from 'react';
 import { AI_PROMPT } from './../../constants/data';
-import {chatSession} from './../../config/AiModel'
-import { useNavigation,useRouter } from 'expo-router';
+import { chatSession } from './../../config/AiModel';
+import { auth, db } from './../../config/FirebaseConfig';
+import { setDoc, doc } from 'firebase/firestore'; // Correct Firebase import
+
 const GenerateTrip = () => {
+  const user = auth.currentUser;
   const { tripData } = useContext(CreateTripContext);
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-
   useEffect(() => {
-    if (tripData) {
-      generateAiTrip();
-    }
-  }, [tripData]);
+    generateAiTrip();
+  }, []);
 
-  const generateAiTrip =async () => {
-    setLoading(true)
-    const FINAL_PROMPT = AI_PROMPT.replace('{location}', tripData?.locationInfo?.name)
-      .replace('{totalDay}', tripData?.totalNumOfDays)
-      .replace('{totalNight}', tripData?.totalNumOfDays - 1)
-      .replace('{traveler}', tripData?.traveler?.title)
-      .replace('{budget}', tripData?.budget);
-    console.log('FINAL_PROMPT', FINAL_PROMPT);
-    const result = await chatSession.sendMessage(FINAL_PROMPT);
-    console.log(result.response.text());
-    setLoading(false)
-    router.push('(tabs)/MyTrip')
+  const generateAiTrip = async () => {
+    try {
+      setLoading(true);
+      const FINAL_PROMPT = AI_PROMPT.replace('{location}', tripData?.locationInfo?.name)
+        .replace('{totalDay}', tripData?.totalNumOfDays)
+        .replace('{totalNight}', tripData?.totalNumOfDays - 1)
+        .replace('{traveler}', tripData?.traveler?.title)
+        .replace('{budget}', tripData?.budget);
+      console.log('FINAL_PROMPT', FINAL_PROMPT);
+      const result = await chatSession.sendMessage(FINAL_PROMPT);
+
+      // Assuming the response text is a JSON string
+      const tripResponse = JSON.parse(result.response.text());
+      console.log(tripResponse);
+      setLoading(false);
+
+      // Save generating trip data to Firebase
+      const docId = Date.now().toString();
+      await setDoc(doc(db, 'UserTrip', docId), {
+        userEmail: user.email,
+        tripPlan: tripResponse, // AI Generate Result
+        tripData: JSON.stringify(tripData), // User Selection data
+        docId: docId,
+      });
+
+      router.push('/MyTrip');
+    } catch (error) {
+      console.error('Error generating trip:', error);
+      setLoading(false);
+    }
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Please Wait .........</Text>
-      <Text style={styles.pragraph}>We are working on generating your dream Trip</Text>
+      <Text style={styles.paragraph}>We are working on generating your dream Trip</Text>
       <View style={styles.imageContainer}>
         <Image 
           source={require('./../../assets/images/plane.gif')} 
@@ -42,7 +61,7 @@ const GenerateTrip = () => {
           resizeMode="contain"
         />
       </View>
-      <Text style={styles.pragraph}>Don't go back.</Text>
+      <Text style={styles.paragraph}>Don't go back.</Text>
     </View>
   );
 };
@@ -62,7 +81,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 10,
   },
-  pragraph: {
+  paragraph: {
     fontFamily: 'Outfit-Medium',
     fontSize: 20,
     textAlign: 'center',
@@ -77,10 +96,10 @@ const styles = StyleSheet.create({
     width: '70%',
     height: 200,
   },
-  pragraphGray: {
+  paragraphGray: {
     fontFamily: 'Outfit',
     fontSize: 20,
     color: Colors.gray,
     textAlign: 'center',
-  }
+  },
 });

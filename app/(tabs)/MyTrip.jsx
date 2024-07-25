@@ -3,9 +3,27 @@ import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import { useEffect,useState } from 'react';
 import StartNewTripCard from '../../components/MyTrips/StartNewTripCard';
+import { collection,getDocs,query, where } from "firebase/firestore"; 
+import {auth,db} from './../../config/FirebaseConfig'
 
 const MyTrip = () => {
   const [userTrip, setUserTrip] = useState([]);
+  const user =auth.currentUser
+
+  useEffect(() => {
+    user&&getMyTrip()
+  }, [user]);
+
+  const getMyTrip = async()=>{
+    const q= query(collection(db,'UserTrip'),where('userEmail','==',user?.email))
+    const querySnapshot = await getDocs(q)
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id, " => ", doc.data());
+    });
+
+  }
+
+
   return (
     <View style={styles.mainView}>
 
