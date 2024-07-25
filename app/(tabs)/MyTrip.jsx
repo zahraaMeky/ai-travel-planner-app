@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,ActivityIndicator } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import { useEffect,useState } from 'react';
@@ -8,6 +8,7 @@ import {auth,db} from './../../config/FirebaseConfig'
 
 const MyTrip = () => {
   const [userTrip, setUserTrip] = useState([]);
+  const [loading, setLoading] = useState(false);
   const user =auth.currentUser
 
   useEffect(() => {
@@ -15,12 +16,15 @@ const MyTrip = () => {
   }, [user]);
 
   const getMyTrip = async()=>{
+    setLoading(true)
+    setUserTrip([])
     const q= query(collection(db,'UserTrip'),where('userEmail','==',user?.email))
     const querySnapshot = await getDocs(q)
     querySnapshot.forEach((doc) => {
       console.log(doc.id, " => ", doc.data());
+      setUserTrip(prev=>[...prev,doc.data()])
     });
-
+    setLoading(false)
   }
 
 
@@ -31,6 +35,7 @@ const MyTrip = () => {
         <Text style={styles.title}>My Trip</Text>
         <Ionicons name="add-circle-outline" size={50} color="black" />
       </View>
+      {loading && <ActivityIndicator size="large" color={Colors.primary} />}
 
       {
         userTrip?.length==0?
