@@ -8,6 +8,8 @@ import moment from 'moment'
 
 const ReviewTrip = () => {
     const navigation = useNavigation();
+    const router = useRouter();
+
 
     const { tripData, setTripData } = useContext(CreateTripContext);
 
@@ -43,7 +45,7 @@ const ReviewTrip = () => {
                 <Text style={{fontFamily:'Outfit',fontSize:20,color:Colors.gray}}>travel Date </Text>
                 <Text style={{fontFamily: 'Outfit-Medium', fontSize: 20}}>
                     {moment(tripData?.startDate).format('DD MMM') + " TO " +
-                    moment(tripData?.endDate).format('DD MMM') + " (" + tripData?.totalNumOfDate + " Days)"}
+                    moment(tripData?.endDate).format('DD MMM') + " (" + tripData?.totalNumOfDays + " Days)"}
                 </Text>
 
             </View>
@@ -70,7 +72,9 @@ const ReviewTrip = () => {
         </View>
       </View>
 
-      <TouchableOpacity style={styles.button} >
+      <TouchableOpacity style={styles.button}
+      onPress={()=>router.replace('/create-trip/Generate-Trip')} 
+      >
             <Text style={{color:Colors.white,textAlign:'center',fontFamily: 'Outfit-Medium',fontSize:20}}>Build My Trip</Text>
       </TouchableOpacity>
     </View>

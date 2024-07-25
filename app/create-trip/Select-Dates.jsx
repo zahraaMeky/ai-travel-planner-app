@@ -28,13 +28,13 @@ const SelectDates = () => {
       ToastAndroid.show('Please Select Start and End Date',ToastAndroid.LONG)
       return
     }
-    const totalNumOfDate = endDate.diff(startDate,'days')
-    console.log('totalNumOfDate',totalNumOfDate)
+    const totalNumOfDays = endDate.diff(startDate,'days')
+    console.log('totalNumOfDays',totalNumOfDays)
     setTripData({
       ...tripData,
       startDate:startDate,
       endDate:endDate,
-      totalNumOfDate:totalNumOfDate+1
+      totalNumOfDays:totalNumOfDays+1
     })
     router.push('/create-trip/Select-Budget')
   }

@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
+    "@google/generative-ai": "^0.15.0",
     "@react-navigation/native": "^6.0.2",
     "date-fns": "^3.6.0",
     "expo": "~51.0.21",

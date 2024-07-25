@@ -1,10 +1,10 @@
-import { StyleSheet,Text,View,FlatList,TouchableOpacity, ToastAndroid} from 'react-native'
+import { StyleSheet,Text,View,FlatList,TouchableOpacity,ToastAndroid} from 'react-native'
 import { useNavigation,useRouter} from 'expo-router';
 import { useEffect,useState,useContext } from "react";
 import { Colors } from '@/constants/Colors';
-import {OptionTravelCard} from './../../components/CreateTrip/OptionTravelCard';
+import OptionTravelCard from './../../components/CreateTrip/OptionTravelCard';
 import { CreateTripContext } from '../../context/CreateTripContext';
-
+import {selectBudgetOption} from './../../constants/data'
 const SelectBudget = () => {
     const navigation = useNavigation();
     const router = useRouter();
@@ -42,10 +42,10 @@ const SelectBudget = () => {
       <View style={{marginTop:20}}>
             <Text style={{fontFamily:'Outfit-Bold',fontSize:20}}>Select Your Trip Spending Habit</Text>
             <FlatList
-                data={selectTravelersList}
+                data={selectBudgetOption}
                 renderItem={({ item }) => (
                     <TouchableOpacity style={{marginVertical:10}}
-                    onPress={setSelectedOption(item)}
+                    onPress={()=>{setSelectedOption(item)}}
                     >
                         <OptionTravelCard option={item} selectedOption={selectedOption}/>
                     </TouchableOpacity>
@@ -53,7 +53,7 @@ const SelectBudget = () => {
                 keyExtractor={item => item.id.toString()}
             />
       </View>
-      <TouchableOpacity style={styles.button} onPress={()=>{onClickContinue}}>
+      <TouchableOpacity style={styles.button} onPress={onClickContinue}>
             <Text style={{color:Colors.white,textAlign:'center',fontFamily: 'Outfit-Medium',fontSize:20}}>Contiue</Text>
       </TouchableOpacity>
       

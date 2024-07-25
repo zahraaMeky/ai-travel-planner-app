@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Colors } from './../../constants/Colors';
 
-const OptionTravelCard = ({ option, selectedOption }) => {
+const OptionTravelCard = ({ option,selectedOption}) => {
   // Determine if the current option is selected
   const isSelected = selectedOption?.id === option?.id;
 
