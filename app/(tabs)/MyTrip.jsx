@@ -5,7 +5,7 @@ import { useEffect,useState } from 'react';
 import StartNewTripCard from '../../components/MyTrips/StartNewTripCard';
 import { collection,getDocs,query, where } from "firebase/firestore"; 
 import {auth,db} from './../../config/FirebaseConfig'
-
+import UserTripList from './../../components/MyTrips/UserTripList'
 const MyTrip = () => {
   const [userTrip, setUserTrip] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -40,7 +40,7 @@ const MyTrip = () => {
       {
         userTrip?.length==0?
         <StartNewTripCard/>:
-        null
+       <UserTripList/>
       }
     </View>
   )
