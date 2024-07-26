@@ -38,7 +38,7 @@ const UserTripList = ({ userTrips }) => {
           </View>
           <TouchableOpacity style={styles.button}
             onPress={()=>router.push({pathname:'/trip-details',
-              params:{trip:userTrips[0]}
+              params:{trip:JSON.stringify(userTrips[0])}
 
             })}
             >
