@@ -2,8 +2,10 @@ import { View, Text, Image, StyleSheet,TouchableOpacity } from 'react-native';
 import moment from 'moment'
 import { Colors } from './../../constants/Colors';
 import UserTripCard from './UserTripCard';
+import {useRouter } from 'expo-router';
 
 const UserTripList = ({ userTrips }) => {
+    const router = useRouter();
     console.log('userTrips from UserTripList',userTrips)
     const latestTrip = JSON.parse(userTrips[0].tripData)
     const apiKey = process.env.EXPO_PUBLIC_GOOGLE_MAP_API_KEY;
@@ -35,7 +37,10 @@ const UserTripList = ({ userTrips }) => {
             <Text style={styles.smallPara}> 🚌 {latestTrip.traveler.title}</Text>
           </View>
           <TouchableOpacity style={styles.button}
-            onPress={()=>router.push('create-trip/Search-Place')}
+            onPress={()=>router.push({pathname:'/trip-details',
+              params:{trip:userTrips[0]}
+
+            })}
             >
           <Text style={{textAlign:'center',color:Colors.white,fontFamily:'Outfit-Medium',fontSize:15}}>See Your Plan</Text>
         </TouchableOpacity>
