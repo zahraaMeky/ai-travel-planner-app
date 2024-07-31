@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image,ScrollView } from 'react-native';
 import { useNavigation, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from "react";
 import { Colors } from '../../constants/Colors';
 import moment from 'moment';
 import FlightInfo from '../../components/TripDetails/FlightInfo';
+import HotelList from '../../components/TripDetails/HotelList';
+import PlannedTrip from '../../components/TripDetails/PlannedTrip';
 
 const Index = () => {
   const navigation = useNavigation();
@@ -43,10 +45,13 @@ const Index = () => {
     ? `https://maps.googleapis.com/maps/api/place/photo?maxheight=400&photoreference=${photoRef}&key=${apiKey}`
     : null;
 
-  const flights = tripDetails?.tripPlan?.travel_plan?.flights || [];
+  const flights = tripDetails?.tripPlan?.trip?.flights || [];
+  const hotels = tripDetails?.tripPlan?.trip?.hotels || [];
+  const tripDailyPlan = tripDetails?.tripPlan?.trip?.itinerary || [];
+
 
   return (
-    <View>
+    <ScrollView>
       {imageUrl ? (
         <Image 
           source={{ uri: imageUrl }} 
@@ -76,8 +81,13 @@ const Index = () => {
 
         {/* Flight Info */}
         <FlightInfo flightData={flights} />
+        {/* Hotel List  */}
+        <HotelList hotelList={hotels}/>
+        {/* Trip Daily Plan */}
+    
+  <PlannedTrip details={tripDailyPlan}/>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -111,4 +121,5 @@ const styles = StyleSheet.create({
     gap: 5,
     marginTop: 5,
   },
+ 
 });

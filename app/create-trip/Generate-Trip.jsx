@@ -25,7 +25,10 @@ const GenerateTrip = () => {
         .replace('{totalDay}', tripData?.totalNumOfDays)
         .replace('{totalNight}', tripData?.totalNumOfDays - 1)
         .replace('{traveler}', tripData?.traveler?.title)
-        .replace('{budget}', tripData?.budget);
+        .replace('{budget}', tripData?.budget)
+        .replace('{totalDay}', tripData?.totalNumOfDays)
+        .replace('{totalNight}', tripData?.totalNumOfDays - 1)
+
       console.log('FINAL_PROMPT', FINAL_PROMPT);
       const result = await chatSession.sendMessage(FINAL_PROMPT);
 

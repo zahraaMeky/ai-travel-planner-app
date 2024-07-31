@@ -13,17 +13,20 @@ const FlightInfo = ({ flightData }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>✈️ Flights</Text>
-      {flightData.map((flight, index) => (
-        <View key={index} style={styles.flightContainer}>
-          <Text style={styles.para}>Airline: {flight.option}</Text>
-          <Text style={styles.para}>Price: {flight.price}</Text>
+      <View style={styles.flexContainer}>
+        <Text style={styles.title}>✈️ Flights</Text>
           <TouchableOpacity 
             style={styles.button} 
             onPress={() => Linking.openURL(flight.booking_url)}
           >
             <Text style={styles.buttonTxT}>Book Here</Text>
           </TouchableOpacity>
+      </View>
+      {flightData.map((flight, index) => (
+        <View key={index} style={styles.flightContainer}>
+          <Text style={styles.para}>Airline: {flight.airline}</Text>
+          <Text style={styles.para}>Price: {flight.price}</Text>
+          
         </View>
       ))}
     </View>
@@ -62,5 +65,11 @@ const styles = StyleSheet.create({
   },
   flightContainer: {
     marginTop: 15,
+  
   },
+  flexContainer:{
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between'
+  }
 });
