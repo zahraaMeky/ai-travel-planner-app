@@ -60,10 +60,10 @@ https://github.com/user-attachments/assets/fcbdc5ed-2b41-4cc5-a165-10db62d28213
 3. **Add environment variables:**
     Create a `.env` file in the root directory and add your environment variables. Example:
     ```env
-    API_KEY=<Your API Key>
+    EXPO_PUBLIC_API_KEY=<Your Expo API Key>
     FIREBASE_API_KEY=<Your Firebase API Key>
-    FIREBASE_AUTH_DOMAIN=<Your Firebase Auth Domain>
-    GOOGLE_MAPS_API_KEY=<Your Google Maps API Key>
+    EXPO_PUBLIC_GOOGLE_GEMINI_API_KEY=<Your Gemini API Key>
+    EXPO_PUBLIC_GOOGLE_MAP_API_KEY=<Your Google Maps API Key>
     ```
 
 4. **Run the application:**
