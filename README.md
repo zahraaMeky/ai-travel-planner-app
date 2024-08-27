@@ -80,12 +80,9 @@ https://github.com/user-attachments/assets/fcbdc5ed-2b41-4cc5-a165-10db62d28213
   ## 🗂️ Project Structure <br/>
 
 - `components/`: Reusable React Native components.<br/>
-- `screens/`: Main application screens.<br/>
-- `navigation/`: Navigation setup for handling app routing.<br/>
-- `services/`: API calls and external services integration.<br/>
+- `constants/`: Application-wide constants.<br/>
 - `context/`: Context providers for managing global state.<br/>
 - `assets/`: Images, icons, and other static assets.<br/>
-- `styles/`: Global styles and theme configurations.<br/>
 </div>
 <br/><br/>
 
