@@ -27,9 +27,6 @@ https://github.com/user-attachments/assets/fcbdc5ed-2b41-4cc5-a165-10db62d28213
   - **🔍 Personalized Recommendations:** Get AI-driven suggestions for destinations, activities, and accommodations based on your preferences.<br/>
   - **🗺️ Interactive Maps:** Visualize your trip with detailed maps and routes.<br/>
   - **📅 Itinerary Management:** Keep track of your travel plans and stay organized.<br/>
-  - **💬 Real-time Chatbot:** Use an AI chatbot to answer travel-related questions and assist with booking.<br/>
-  - **🔔 Notifications:** Receive reminders and updates about your upcoming trips.<br/>
-  - **🧳 Packing Lists:** Generate packing lists tailored to your destination and activities.<br/>
   - **📱 Cross-Platform:** Available on both iOS and Android devices.<br/>
 </div>
 <br/><br/>
@@ -38,7 +35,7 @@ https://github.com/user-attachments/assets/fcbdc5ed-2b41-4cc5-a165-10db62d28213
   ## 🛠️ Technologies Used<br/>
   - **React Native:** A framework for building native apps using React [https://reactnative.dev/].<br/>
   - **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript [https://typescriptlang.org/].<br/>
-  - **AI-Powered Algorithms:** Custom AI algorithms for personalized recommendations.<br/>
+  - **Gemini:** An advanced AI platform for content generation [https://gemini.com/].<br/>
   - **Firebase:** Backend services for authentication, database, and cloud functions [https://firebase.google.com/].<br/>
   - **Google Maps API:** Interactive maps and geolocation services [https://developers.google.com/maps].<br/>
   - **Expo:** A platform for universal React apps [https://expo.dev/].<br/>
