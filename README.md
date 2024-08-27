@@ -1,53 +1,43 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/390cec99-5e38-44d8-9332-ab1a4da76a62" alt="Project Banner">
+  <img src="https://github.com/yourusername/assets/project-banner.png" alt="Project Banner">
   <br />
 </div>
 <br />
 <div align="center">
-  <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
-  <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
+  <img src="https://img.shields.io/badge/-React_Native-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react-native" />
   <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
-  <img src="https://img.shields.io/badge/-Gemini-black?style=for-the-badge&logoColor=white&logo=gemini&color=FF4500" alt="gemini" />
-  <img src="https://img.shields.io/badge/-Clerk-black?style=for-the-badge&logoColor=white&logo=clerk&color=0A0A0A" alt="clerk" />
+  <img src="https://img.shields.io/badge/-AI-Powered-black?style=for-the-badge&logoColor=white&logo=artificialintelligence&color=FF4500" alt="ai-powered" />
 </div>
 
-<h3 align="center">📝 AI Content Generator App</h3>
+<h3 align="center">🗺️ AI-Powered Travel Planner</h3>
 <br/>
 
 <div align="left">
-  Welcome to the AI Content Generator Application! This application harnesses the power of AI to assist users in generating high-quality content across various platforms. Whether you're a blogger, YouTuber, Instagram influencer, or developer, this app will help you create compelling content with ease.
+  Welcome to the AI-Powered Travel Planner application! This Full Stack React Native app, developed during my learning journey, leverages advanced AI to offer personalized travel recommendations and seamless trip management, ensuring a hassle-free travel experience.
 </div>
 <br/><br/>
 
 <div>
-  ✨ **Features**<br/>
-  - **📝 Blog Title Generation:** Generate catchy and SEO-friendly blog titles.<br/>
-  - **📄 Blog Content Creation:** Create well-structured and engaging blog posts.<br/>
-  - **💡 Blog Topic Ideas:** Get innovative ideas for your next blog post.<br/>
-  - **🎥 YouTube SEO Tools:** Generate optimized YouTube titles, descriptions, and tags.<br/>
-  - **✍️ Rewrite Articles:** Improve and rewrite existing articles for better readability and SEO.<br/>
-  - **🔧 Text Improvement:** Enhance the quality and clarity of your text.<br/>
-  - **😊 Add Emojis to Text:** Make your text more engaging by adding relevant emojis.<br/>
-  - **📸 Instagram Post Generator:** Create captivating Instagram posts.<br/>
-  - **#️⃣ Instagram Hashtag Generator:** Generate effective hashtags for Instagram posts.<br/>
-  - **💡 Instagram Post/Reel Ideas:** Get creative ideas for Instagram posts and reels.<br/>
-  - **🔤 English Grammar Check:** Ensure your content is grammatically correct.<br/>
-  - **💻 Write Code:** Generate code snippets for various programming tasks.<br/>
-  - **❓ Explain Code:** Get explanations for code snippets to understand how they work.<br/>
-  - **🐛 Code Bug Detector:** Identify and fix bugs in your code.<br/>
-  - **🏷️ Tagline Generator:** Create catchy taglines for your brand or product.<br/>
-  - **📝 Product Descriptions:** Write detailed and persuasive product descriptions.
+  ✨ Features<br/>
+  - **🌍 Trip Planning:** Create and customize travel itineraries with ease.<br/>
+  - **🔍 Personalized Recommendations:** Get AI-driven suggestions for destinations, activities, and accommodations based on your preferences.<br/>
+  - **🗺️ Interactive Maps:** Visualize your trip with detailed maps and routes.<br/>
+  - **📅 Itinerary Management:** Keep track of your travel plans and stay organized.<br/>
+  - **💬 Real-time Chatbot:** Use an AI chatbot to answer travel-related questions and assist with booking.<br/>
+  - **🔔 Notifications:** Receive reminders and updates about your upcoming trips.<br/>
+  - **🧳 Packing Lists:** Generate packing lists tailored to your destination and activities.<br/>
+  - **📱 Cross-Platform:** Available on both iOS and Android devices.<br/>
 </div>
 <br/><br/>
 
 <div>
   ## 🛠️ Technologies Used<br/>
-  - **Next.js:** A React framework for server-side rendering and generating static websites. [https://nextjs.org/](https://nextjs.org/)<br/>
-  - **Gemini:** An advanced AI platform for content generation. [https://gemini.com/](https://gemini.com/)<br/>
-  - **Tailwind CSS:** A utility-first CSS framework for styling. [https://tailwindcss.com/](https://tailwindcss.com/)<br/>
-  - **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript. [https://typescriptlang.org/](https://typescriptlang.org/)<br/>
-  - **Clerk:** A user management and authentication service. [https://clerk.dev/](https://clerk.dev/)<br/>
-  - **Drizzle ORM:** A lightweight and efficient TypeScript Object-Relational Mapper (ORM) that prioritizes developer experience. It includes a command-line interface (CLI) tool called Drizzle Kit for database migrations. [https://orm.drizzle.team/](https://orm.drizzle.team/)
+  - **React Native:** A framework for building native apps using React [https://reactnative.dev/].<br/>
+  - **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript [https://typescriptlang.org/].<br/>
+  - **AI-Powered Algorithms:** Custom AI algorithms for personalized recommendations.<br/>
+  - **Firebase:** Backend services for authentication, database, and cloud functions [https://firebase.google.com/].<br/>
+  - **Google Maps API:** Interactive maps and geolocation services [https://developers.google.com/maps].<br/>
+  - **Expo:** A platform for universal React apps [https://expo.dev/].<br/>
 </div>
 <br/><br/>
 
@@ -56,7 +46,7 @@
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/ai-content-generator.git
+    git clone https://github.com/yourusername/ai-travel-planner.git
     ```
 
 2. **Install dependencies:**
@@ -67,65 +57,59 @@
     ```
 
 3. **Add environment variables:**
-    Create a `.env.local` file in the root directory and add your environment variables. Example:
+    Create a `.env` file in the root directory and add your environment variables. Example:
     ```env
-    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<Your Clerk Publishable Key>
-    CLERK_SECRET_KEY=<Your Clerk Secret Key>
-    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-    NEXT_PUBLIC_GEMINI_API_KEY=<Your Gemini API Key>
-    NEXT_PUBLIC_DRIZZLE_DB_URL=<Your Drizzle ORM Database URL>
-    NEXT_PUBLIC_PAYPAL_CLIENT_ID=<Your PayPal Client ID>
-    NEXT_PUBLIC_PAYPAL_CLIENT_SECRET=<Your PayPal Client Secret>
+    API_KEY=<Your API Key>
+    FIREBASE_API_KEY=<Your Firebase API Key>
+    FIREBASE_AUTH_DOMAIN=<Your Firebase Auth Domain>
+    GOOGLE_MAPS_API_KEY=<Your Google Maps API Key>
     ```
 
-4. **Run the development server:**
+4. **Run the application:**
     ```bash
-    npm run dev
+    npm start
     # or
-    yarn dev
+    yarn start
     ```
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Use the Expo Go app on your iOS or Android device to view the app in development mode.
 </div>
 <br/><br/>
 
 <div>
   ## 🗂️ Project Structure <br/>
 
-- `app/`: Main application pages and layouts.<br/>
-- `utils/`: Backend API routes for Gemini.<br/>
-- `auth/`: Authentication-related data and routes for Clerk.<br/>
-- `components/`: Reusable React components.<br/>
-- `constants/`: Application-wide constants.<br/>
-- `context/`: Context providers for updating user credentials.<br/>
-- `data/`: Template arrays and static data.<br/>
-- `globals.css/`: Global styles and Tailwind CSS configuration.<br/>
-- `lib/`: Utility functions.<br/>
-- `public/`: Static files and assets.<br/>
-- `schema/`: Database table schemas for Drizzle ORM.<br/>
-- `types/`: TypeScript interfaces and types.<br/>
+- `components/`: Reusable React Native components.<br/>
+- `screens/`: Main application screens.<br/>
+- `navigation/`: Navigation setup for handling app routing.<br/>
+- `services/`: API calls and external services integration.<br/>
+- `context/`: Context providers for managing global state.<br/>
+- `assets/`: Images, icons, and other static assets.<br/>
+- `styles/`: Global styles and theme configurations.<br/>
+</div>
+<br/><br/>
 
-## 🔒 Protected Routes<br/><br/>
+<div>
+  ## 🔒 Authentication<br/><br/>
 
-The application uses Clerk for authentication. Certain routes are protected and require users to be logged in. If a user is not authenticated, they will be redirected to the login page.<br/><br/>
+The application uses Firebase for user authentication. Users can sign up, log in, and manage their profiles securely. Some features are only accessible to authenticated users.<br/><br/>
 
-## 🔄 Fetching Data<br/>
+## 🔄 Data Management<br/>
 
-Data is fetched from the Gemini API. While data is being fetched, a loading animation is displayed to enhance user experience.<br/><br/>
+User data is stored in Firebase, allowing for real-time updates and synchronization across devices. The app ensures data security and privacy, following best practices for handling user information.<br/><br/>
 
-## 📅 Content Generation<br/>
+## 🌟 AI Recommendations<br/>
 
-Users can generate various types of content using the AI-powered tools. The system ensures high-quality and relevant outputs tailored to user requirements.
+The AI algorithms analyze user preferences and travel history to suggest destinations, accommodations, and activities tailored to individual needs.
 </div>
 <br/><br/>
 
 <div>
   ## 📧 Contact<br/>
 
-For any inquiries, please reach out to [eng.alzahraa.meky@gmail.com](mailto:eng.alzahraa.meky@gmail.com).<br/>
-or contact via WhatsApp at +96899495057.
+For any inquiries, please reach out to [your.email@example.com](mailto:your.email@example.com).<br/>
+or contact via WhatsApp at +1234567890.
 
 ---
 
-Visit the live application at [ai-content-generator-app.netlify.app](https://ai-content-generator-app.netlify.app/)
+Visit the live application at [ai-travel-planner-app.netlify.app](https://ai-travel-planner-app.netlify.app/)
 </div>
