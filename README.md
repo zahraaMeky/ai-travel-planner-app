@@ -1,7 +1,10 @@
 <div align="center">
 
 
-https://github.com/user-attachments/assets/fcbdc5ed-2b41-4cc5-a165-10db62d28213
+
+
+https://github.com/user-attachments/assets/27c2212e-a91d-41e1-9d4a-3fbaf0f9f5a3
+
 
 
   <br />
@@ -9,8 +12,11 @@ https://github.com/user-attachments/assets/fcbdc5ed-2b41-4cc5-a165-10db62d28213
 <br />
 <div align="center">
   <img src="https://img.shields.io/badge/-React_Native-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react-native" />
+  <img src="https://img.shields.io/badge/-Expo-black?style=for-the-badge&logoColor=white&logo=expo&color=000000" alt="expo" />
   <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
-   <img src="https://img.shields.io/badge/-Gemini-black?style=for-the-badge&logoColor=white&logo=gemini&color=FF4500" alt="gemini" />
+  <img src="https://img.shields.io/badge/-Firebase-black?style=for-the-badge&logoColor=white&logo=firebase&color=FFCA28" alt="firebase" />
+  <img src="https://img.shields.io/badge/-Gemini-black?style=for-the-badge&logoColor=white&logo=gemini&color=FF4500" alt="gemini" />
+  <img src="https://img.shields.io/badge/-Google_Places_API-black?style=for-the-badge&logoColor=white&logo=google&color=4285F4" alt="google-places-api" />
 </div>
 
 <h3 align="center">🗺️ AI-Powered Travel Planner</h3>
